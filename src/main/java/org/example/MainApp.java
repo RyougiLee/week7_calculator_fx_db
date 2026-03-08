@@ -20,3 +20,9 @@ public class MainApp extends Application {
         launch();
     }
 }
+
+class run{
+    public static void main(String[] args) {
+        MainApp.main(args);
+    }
+}
