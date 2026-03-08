@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'Maven 3'
+    }
+
     stages {
         stage('Build') {
             steps {
@@ -24,7 +28,7 @@ pipeline {
         stage('Verify') {
             steps {
                 sleep 10
-                bat 'docker exec calculator-db mariadb -u root -p 114514 -e "USE calc_data; SHOW TABLES;"'
+                bat 'docker exec calculator-db mariadb -uroot -p114514 -e "USE calc_data; SHOW TABLES;"'
             }
         }
     }
